@@ -26,7 +26,7 @@ import {filterImageFromURL, deleteLocalFiles, isSupportedFormat } from './util/u
   // RETURNS
   //   the filtered image file
   /**************************************************************************** */
-  app.get("/filteredimage", async( req, res) => {
+  app.get( "/filteredimage/", async (req: express.Request, res: express.Response) => {
     let image_url = req.query.image_url;   // pull image_url from query string
 
     if (! image_url) {
@@ -55,7 +55,7 @@ import {filterImageFromURL, deleteLocalFiles, isSupportedFormat } from './util/u
   
   // Root Endpoint
   // Displays a simple message to the user
-  app.get( "/", async ( req, res ) => {
+  app.get( "/", async ( req: express.Request, res: express.Response ) => {
     res.send("Try GET /filteredimage?image_url={{}}")
   } );
   
